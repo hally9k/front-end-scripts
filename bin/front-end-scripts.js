@@ -8,6 +8,7 @@ switch (script) {
     // case 'test':
     case 'build':
     case 'start':
+    case 'watch':
         process.exit(run().status);
         break;
     default:
