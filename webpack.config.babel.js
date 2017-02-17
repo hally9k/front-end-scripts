@@ -132,6 +132,13 @@ module.exports = {
 
         const indexEntry = generateIndexEntry(dev);
         const plugins = generatePlugins(dev);
+
+        if (dev) {
+            appConfig = appConfig.dev;
+        } else {
+            appConfig = appConfig.prod;
+        }
+
         const entry = Object.assign(
             { index: indexEntry }, appConfig.entry
         );
@@ -178,7 +185,7 @@ module.exports = {
             devtool: 'source-map', // dev ? 'cheap-module-eval-source-map' : 'source-map',
             // TODO: Change the devtool option back to this turnary once the Chrome issues have
             //       been resolved. See https://github.com/webpack/webpack/issues/2145
-           
+
             entry: entry,
 
             output: output,

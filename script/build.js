@@ -2,7 +2,7 @@
 
 const CLI_ARGUMENTS = process.argv.slice(2);
 const WEBPACK_OPTIONS = {
-    dev: false,
+    dev: !CLI_ARGUMENTS.includes('--prod'),
     linkedInstall: CLI_ARGUMENTS.includes('--linked') // CLI Documentation
 };
 
